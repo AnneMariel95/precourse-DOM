@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript training ground</title>
+    <script src="functions.js"></script>
+    <script>
+      //   const name = prompt("What is your name?");
+      //   alert(`Hello ${name}!`);
+
+      console.log("salt> In the head");
+    </script>
+  </head>
+  <body>
+    <script>
+      console.log("salt> Start of body");
+    </script>
+    <main>
+      <div name="content" class="big bold bright">Content 1</div>
+      <div class="big bold" id="companyName">Content 2</div>
+      <div name="content" class="big">Content 3</div>
+    </main>
+    <script>
+      function addListInMain(numberOfListItems) {
+        const ulElement = document.createElement("ul");
+
+        for (let i = 0; i < numberOfListItems; i++) {
+          const liItem = document.createElement("li");
+          liItem.textContent = `Item #${i + 1}`;
+          liItem.id = i + 1;
+
+          ulElement.appendChild(liItem);
+        }
+
+        const main = document.querySelector("main");
+        main.appendChild(ulElement);
+      }
+    </script>
+    <script>
+      function removeDivById(id) {
+        const divToRemove = document.getElementById(id);
+        console.log(id, divToRemove);
+        if (divToRemove != undefined) {
+          divToRemove.remove();
+        }
+      }
+    </script>
+    <script>
+      const companyName = myFunctions.getCompanyName();
+      document.getElementById("companyName").innerHTML = companyName;
+      addListInMain(10);
+      removeDivById("9");
+    </script>
+  </body>
+</html>
